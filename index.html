@@ -99,29 +99,7 @@
 </head>
 <body>
 
-	<h2>Streaming .ts Video via HLS</h2>
-    <video id="video" controls></video>
-
-    <script>
-        var video = document.getElementById('video');
-        var videoSrc = 'https://khxyz.xyz/y3.m3u8';
-
-        if (Hls.isSupported()) {
-            var hls = new Hls();
-            hls.loadSource(videoSrc);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                video.play();
-            });
-        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            video.src = videoSrc;
-            video.addEventListener('loadedmetadata', function() {
-                video.play();
-            });
-        } else {
-            alert('Your browser does not support HLS streaming.');
-        }
-    </script>
+	
 
     <video id="videoPlayer" controls width="800">
         <source src="y3.mp4" type="video/mp4">
